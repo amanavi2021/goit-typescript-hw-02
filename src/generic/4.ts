@@ -6,14 +6,14 @@ interface IComponent {
   title: string;
 }
 
-class Component<T extends object> {
+class Component<T> {
   constructor (public props:T) {
 
   }
 }
 
-class Page<T extends IComponent> extends Component<T> {
-  pageInfo () {
+class Page extends Component<IComponent> {
+  pageInfo (): void {
     console.log(this.props.title);
   }
 }
